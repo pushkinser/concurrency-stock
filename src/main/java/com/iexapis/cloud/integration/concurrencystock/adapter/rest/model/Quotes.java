@@ -1,4 +1,4 @@
-package com.iexapis.cloud.integration.concurrencystock.model;
+package com.iexapis.cloud.integration.concurrencystock.adapter.rest.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 @RequiredArgsConstructor
-public class QuotesModel {
+public class Quotes {
 
     private String companyName;
     private String latestPrice;

@@ -12,4 +12,5 @@ app:
         url:
           quotes: https://cloud.iexapis.com/stable/stock/{stockName}/quote
           stockNameKey: '{stockName}'
+          stock: https://cloud.iexapis.com/stable/ref-data/symbols
         token: ${IEXCLOUD_API_TOKEN}
