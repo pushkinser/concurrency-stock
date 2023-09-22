@@ -18,9 +18,6 @@ import org.springframework.web.client.RestTemplate;
 public class QuotesClientProvider implements QuotesClientApi {
 
     private final RestTemplate restTemplate;
-    private final String token;
-
-    private final String url;
 
     private final String urlSafety;
 
@@ -31,8 +28,6 @@ public class QuotesClientProvider implements QuotesClientApi {
                                 @Value("${app.integration.api.iexcloud.url.stockNameKey}") String stockNamePlaceholder,
                                 @Value("${app.integration.api.iexcloud.token}") String token) {
         this.restTemplate = restTemplate;
-        this.url = url;
-        this.token = token;
         this.stockNamePlaceholder = stockNamePlaceholder;
         this.urlSafety = url + "?token=" + token;
     }
