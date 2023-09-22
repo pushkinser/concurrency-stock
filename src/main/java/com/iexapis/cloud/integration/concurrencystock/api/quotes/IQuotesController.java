@@ -1,4 +1,4 @@
-package com.iexapis.cloud.integration.concurrencystock.in.rest;
+package com.iexapis.cloud.integration.concurrencystock.api.quotes;
 
 import com.iexapis.cloud.integration.concurrencystock.model.QuotesModel;
 import org.springframework.beans.factory.annotation.Value;
