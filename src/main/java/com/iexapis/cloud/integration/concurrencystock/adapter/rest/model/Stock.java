@@ -12,4 +12,5 @@ import lombok.RequiredArgsConstructor;
 public class Stock {
 
     private String symbol;
+    private boolean isEnabled;
 }
