@@ -9,4 +9,7 @@ app:
   integration:
     api:
       iexcloud:
-        token: {$IEXCLOUD_API_TOKEN}
+        url:
+          quotes: https://cloud.iexapis.com/stable/stock/{stockName}/quote
+          stockNameKey: '{stockName}'
+        token: ${IEXCLOUD_API_TOKEN}
