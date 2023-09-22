@@ -1,7 +1,10 @@
 package com.iexapis.cloud.integration.concurrencystock.api.stock;
 
+import com.iexapis.cloud.integration.concurrencystock.model.StockModel;
+
+import java.util.Collection;
+
 public interface StockClientApi {
 
-    //TODO: return stocks
-    public String get();
+    Collection<StockModel> getStocks();
 }
