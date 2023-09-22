@@ -1,6 +1,7 @@
-package com.iexapis.cloud.integration.concurrencystock.api.stock;
+package com.iexapis.cloud.integration.concurrencystock.adapter.rest.client;
 
-import com.iexapis.cloud.integration.concurrencystock.model.StockModel;
+import com.iexapis.cloud.integration.concurrencystock.adapter.rest.model.Stock;
+import com.iexapis.cloud.integration.concurrencystock.application.port.input.StockClientApi;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
@@ -25,10 +26,10 @@ public class StockClientProvider implements StockClientApi {
     private final RestTemplate restTemplate;
 
     @Override
-    public Collection<StockModel> getStocks() {
+    public Collection<Stock> getStocks() {
         String url = stockUrl + "?token=" + token;
-        ParameterizedTypeReference<List<StockModel>> typeReference = new ParameterizedTypeReference<>() {};
-        ResponseEntity<List<StockModel>> response = restTemplate.exchange(url, HttpMethod.GET, null, typeReference);
+        ParameterizedTypeReference<List<Stock>> typeReference = new ParameterizedTypeReference<>() {};
+        ResponseEntity<List<Stock>> response = restTemplate.exchange(url, HttpMethod.GET, null, typeReference);
         return response.getBody();
     }
 }
