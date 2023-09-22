@@ -1,0 +1,12 @@
+## Spring configuration
+spring:
+  config:
+    # settings for local development environment only
+    import: optional:file:.env[.properties];optional:file:./application-local.yaml
+
+# Application-specific properties
+app:
+  integration:
+    api:
+      iexcloud:
+        token: {$IEXCLOUD_API_TOKEN}
