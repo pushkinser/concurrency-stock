@@ -1,7 +1,7 @@
 package com.iexapis.cloud.integration.concurrencystock.adapter.rest.client;
 
 import com.iexapis.cloud.integration.concurrencystock.adapter.rest.model.Stock;
-import com.iexapis.cloud.integration.concurrencystock.application.port.input.StockClientApi;
+import com.iexapis.cloud.integration.concurrencystock.application.port.rest.StockClientApi;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;

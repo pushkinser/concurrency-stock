@@ -19,8 +19,8 @@ services:
       - concurrency-stock-postgres:/var/lib/postgresql/data/
     environment:
       POSTGRES_DB_NAME: ${POSTGRES_DB_NAME}
-      POSTGRES_DB_USER_NAME: ${POSTGRES_DB_USER_NAME}
-      POSTGRES_DB_USER_PASSWORD: ${POSTGRES_DB_USER_PASSWORD}
+      POSTGRES_USER: ${POSTGRES_DB_USER_NAME}
+      POSTGRES_PASSWORD: ${POSTGRES_DB_USER_PASSWORD}
   mongo:
     container_name: concurrency-stock-mongo
     image: mongo:6-jammy
@@ -29,8 +29,8 @@ services:
     volumes:
       - concurrency-stock-mongo:/var/lib/mongo/data/
     environment:
-      MONGO_DB_USER_NAME: ${MONGO_DB_USER_NAME}
-      MONGO_DB_USER_PASSWORD: ${MONGO_DB_USER_PASSWORD}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_DB_USER_NAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_DB_USER_PASSWORD}
   zookeeper:
     image: confluentinc/cp-zookeeper
     environment:

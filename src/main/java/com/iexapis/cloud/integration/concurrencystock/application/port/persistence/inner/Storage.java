@@ -1,4 +1,4 @@
-package com.iexapis.cloud.integration.concurrencystock.service;
+package com.iexapis.cloud.integration.concurrencystock.application.port.persistence.inner;
 
 import java.util.Collection;
 import java.util.concurrent.CopyOnWriteArrayList;

@@ -1,8 +1,8 @@
 package com.iexapis.cloud.integration.concurrencystock.adapter.rest.client;
 
 import com.iexapis.cloud.integration.concurrencystock.adapter.rest.model.Quote;
-import com.iexapis.cloud.integration.concurrencystock.application.port.input.QuoteClientApi;
-import com.iexapis.cloud.integration.concurrencystock.application.port.input.QuoteClientRpsFrequencyApi;
+import com.iexapis.cloud.integration.concurrencystock.application.port.rest.QuoteClientApi;
+import com.iexapis.cloud.integration.concurrencystock.application.port.rest.QuoteClientRpsFrequencyApi;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
