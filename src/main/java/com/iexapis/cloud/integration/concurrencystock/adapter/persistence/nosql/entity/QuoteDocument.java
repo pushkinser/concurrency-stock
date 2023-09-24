@@ -1,4 +1,4 @@
-package com.iexapis.cloud.integration.concurrencystock.application.port.persistence.entity;
+package com.iexapis.cloud.integration.concurrencystock.adapter.persistence.nosql.entity;
 
 import lombok.Builder;
 import lombok.Data;

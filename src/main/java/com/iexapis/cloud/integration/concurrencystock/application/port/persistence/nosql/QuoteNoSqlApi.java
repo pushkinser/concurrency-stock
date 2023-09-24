@@ -1,6 +1,6 @@
-package com.iexapis.cloud.integration.concurrencystock.application.port.persistence;
+package com.iexapis.cloud.integration.concurrencystock.application.port.persistence.nosql;
 
-import com.iexapis.cloud.integration.concurrencystock.application.port.persistence.entity.QuoteDocument;
+import com.iexapis.cloud.integration.concurrencystock.adapter.persistence.nosql.entity.QuoteDocument;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

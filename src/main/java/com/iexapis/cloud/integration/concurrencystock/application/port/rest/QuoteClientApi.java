@@ -1,4 +1,4 @@
-package com.iexapis.cloud.integration.concurrencystock.application.port.input;
+package com.iexapis.cloud.integration.concurrencystock.application.port.rest;
 
 import com.iexapis.cloud.integration.concurrencystock.adapter.rest.model.Quote;
 

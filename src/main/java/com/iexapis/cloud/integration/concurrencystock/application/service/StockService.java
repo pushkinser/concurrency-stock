@@ -1,4 +1,4 @@
-package com.iexapis.cloud.integration.concurrencystock.service;
+package com.iexapis.cloud.integration.concurrencystock.application.service;
 
 /**
  * StockService
