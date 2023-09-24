@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 @RequiredArgsConstructor
-public class Quotes {
+public class Quote {
 
     private String companyName;
     private String latestPrice;

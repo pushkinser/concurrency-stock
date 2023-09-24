@@ -20,18 +20,22 @@ public class StockStorage implements Storage<Stock> {
     CopyOnWriteArrayList<Stock> stockList = new CopyOnWriteArrayList<>();
 
     @Override
-    public void setStocksList(Collection<Stock> stockList) {
+    public void setList(Collection<Stock> stockList) {
         this.stockList = new CopyOnWriteArrayList<>(stockList);
     }
 
     @Override
-    public void addToStockList(Collection<Stock> stockList) {
+    public void addToList(Collection<Stock> stockList) {
         this.stockList.addAll(new CopyOnWriteArrayList<>(stockList));
     }
 
     @Override
-    public void addToStockList(Stock stock) {
+    public void addToList(Stock stock) {
         this.stockList.add(stock);
     }
 
+    @Override
+    public CopyOnWriteArrayList<Stock> getList() {
+        return stockList;
+    }
 }

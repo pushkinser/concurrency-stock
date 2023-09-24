@@ -1,6 +1,6 @@
 package com.iexapis.cloud.integration.concurrencystock.application.port.input;
 
-import com.iexapis.cloud.integration.concurrencystock.adapter.rest.model.Quotes;
+import com.iexapis.cloud.integration.concurrencystock.adapter.rest.model.Quote;
 
 /**
  * QuotesController
@@ -9,6 +9,6 @@ import com.iexapis.cloud.integration.concurrencystock.adapter.rest.model.Quotes;
  * <p>
  * 22.09.2023
  */
-public interface QuotesClientApi {
-    Quotes getQuotesByStocks(String stockName);
+public interface QuoteClientApi {
+    Quote getQuotesByStocks(String stockName);
 }
