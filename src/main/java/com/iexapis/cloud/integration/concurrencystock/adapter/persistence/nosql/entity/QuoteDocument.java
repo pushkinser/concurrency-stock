@@ -2,8 +2,10 @@ package com.iexapis.cloud.integration.concurrencystock.adapter.persistence.nosql
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.UUID;
 
@@ -16,13 +18,16 @@ import java.util.UUID;
  */
 @Data
 @Builder
-@Document(collation = "quote")
+@EqualsAndHashCode(of = "companyName")
+@Document(collection = "quoteDocument")
 public class QuoteDocument {
 
     @Id
     private UUID companyId;
 
+    @Field("companyName")
     private String companyName;
+    @Field("latestPrice")
     private String latestPrice;
 
 }

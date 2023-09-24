@@ -29,8 +29,8 @@ services:
     volumes:
       - concurrency-stock-mongo:/var/lib/mongo/data/
     environment:
-      MONGO_DB_USER_NAME: ${MONGO_DB_USER_NAME}
-      MONGO_DB_USER_PASSWORD: ${MONGO_DB_USER_PASSWORD}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_DB_USER_NAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_DB_USER_PASSWORD}
   zookeeper:
     image: confluentinc/cp-zookeeper
     environment:

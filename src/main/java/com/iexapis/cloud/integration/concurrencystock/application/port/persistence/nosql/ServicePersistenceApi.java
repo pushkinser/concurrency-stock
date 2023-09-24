@@ -8,5 +8,5 @@ package com.iexapis.cloud.integration.concurrencystock.application.port.persiste
  * 24.09.2023
  */
 public interface ServicePersistenceApi<T> {
-    void saveQuote(T model);
+    void createOrUpdate(T model);
 }

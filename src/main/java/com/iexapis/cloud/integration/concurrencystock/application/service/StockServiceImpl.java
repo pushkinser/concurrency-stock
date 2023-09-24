@@ -1,6 +1,7 @@
 package com.iexapis.cloud.integration.concurrencystock.application.service;
 
 import com.iexapis.cloud.integration.concurrencystock.adapter.rest.model.Quote;
+import com.iexapis.cloud.integration.concurrencystock.application.port.persistence.nosql.ServicePersistenceApi;
 import com.iexapis.cloud.integration.concurrencystock.application.port.rest.QuoteClientRpsFrequencyApi;
 import com.iexapis.cloud.integration.concurrencystock.application.port.rest.StockClientApi;
 import com.iexapis.cloud.integration.concurrencystock.adapter.persistence.inner.QuoteStorage;
@@ -29,6 +30,8 @@ public class StockServiceImpl implements StockService {
 
     private final QuoteStorage quoteStorage;
 
+    private final ServicePersistenceApi<Quote> servicePersistenceApi;
+
     @PostConstruct
     public void pullStocks() {
         stockStorage.setList(stockClientApi.getStocks());
@@ -39,6 +42,7 @@ public class StockServiceImpl implements StockService {
         stockStorage.getList().parallelStream().forEach(stock -> {
             Quote quotesByStocks = quoteClientRpsFrequencyApi.getQuotes(stock.getSymbol());
             quoteStorage.addToList(quotesByStocks);
+            servicePersistenceApi.createOrUpdate(quotesByStocks);
         });
     }
 }

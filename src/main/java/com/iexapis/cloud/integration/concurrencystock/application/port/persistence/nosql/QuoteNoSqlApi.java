@@ -4,6 +4,9 @@ import com.iexapis.cloud.integration.concurrencystock.adapter.persistence.nosql.
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+import java.util.UUID;
+
 /**
  * NoSqlApi
  *
@@ -12,5 +15,8 @@ import org.springframework.stereotype.Repository;
  * 24.09.2023
  */
 @Repository
-public interface QuoteNoSqlApi extends MongoRepository<QuoteDocument, Long> {
+public interface QuoteNoSqlApi extends MongoRepository<QuoteDocument, UUID> {
+
+    Optional<QuoteDocument> findByCompanyName(String companyName);
+
 }
