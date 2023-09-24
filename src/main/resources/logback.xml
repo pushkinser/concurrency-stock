@@ -9,7 +9,7 @@
 
 
     <!-- MongoDB logger -->
-    <logger name="org.mongodb.driver" level="DEBUG" additivity="false">
+    <logger name="org.mongodb.driver" level="INFO" additivity="false">
         <appender-ref ref="STDOUT"/>
     </logger>
 
