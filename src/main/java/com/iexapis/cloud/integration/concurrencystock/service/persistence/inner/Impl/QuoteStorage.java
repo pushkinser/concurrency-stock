@@ -1,7 +1,7 @@
-package com.iexapis.cloud.integration.concurrencystock.service.Impl;
+package com.iexapis.cloud.integration.concurrencystock.service.persistence.inner.Impl;
 
 import com.iexapis.cloud.integration.concurrencystock.adapter.rest.model.Quote;
-import com.iexapis.cloud.integration.concurrencystock.service.Storage;
+import com.iexapis.cloud.integration.concurrencystock.service.persistence.inner.Storage;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;

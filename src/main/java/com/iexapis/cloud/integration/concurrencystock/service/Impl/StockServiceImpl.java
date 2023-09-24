@@ -3,6 +3,8 @@ package com.iexapis.cloud.integration.concurrencystock.service.Impl;
 import com.iexapis.cloud.integration.concurrencystock.application.port.input.QuoteClientApi;
 import com.iexapis.cloud.integration.concurrencystock.application.port.input.StockClientApi;
 import com.iexapis.cloud.integration.concurrencystock.service.StockService;
+import com.iexapis.cloud.integration.concurrencystock.service.persistence.inner.Impl.QuoteStorage;
+import com.iexapis.cloud.integration.concurrencystock.service.persistence.inner.Impl.StockStorage;
 import jakarta.annotation.PostConstruct;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
