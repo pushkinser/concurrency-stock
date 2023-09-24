@@ -3,6 +3,11 @@ spring:
   config:
     # settings for local development environment only
     import: optional:file:.env[.properties];optional:file:./application-local.yaml
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://${DB_SERVERS}/${DB_NAME}?currentSchema=${DB_SCHEMA}&targetServerType=primary
+    username: ${DB_USER_USERNAME}
+    password: ${DB_USER_PASSWORD}
 
 # Application-specific properties
 app:
