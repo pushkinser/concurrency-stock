@@ -1,6 +1,6 @@
 package com.iexapis.cloud.integration.concurrencystock;
 
-import com.iexapis.cloud.integration.concurrencystock.application.port.persistence.QuoteNoSqlApi;
+import com.iexapis.cloud.integration.concurrencystock.application.port.persistence.nosql.QuoteNoSqlApi;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration;

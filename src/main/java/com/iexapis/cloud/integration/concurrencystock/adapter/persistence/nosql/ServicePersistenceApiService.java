@@ -1,9 +1,9 @@
-package com.iexapis.cloud.integration.concurrencystock.service.persistence.nosql.Impl;
+package com.iexapis.cloud.integration.concurrencystock.adapter.persistence.nosql;
 
 import com.iexapis.cloud.integration.concurrencystock.adapter.rest.model.Quote;
-import com.iexapis.cloud.integration.concurrencystock.application.port.persistence.QuoteNoSqlApi;
-import com.iexapis.cloud.integration.concurrencystock.application.port.persistence.entity.QuoteDocument;
-import com.iexapis.cloud.integration.concurrencystock.service.persistence.nosql.ServicePersistenceApi;
+import com.iexapis.cloud.integration.concurrencystock.application.port.persistence.nosql.QuoteNoSqlApi;
+import com.iexapis.cloud.integration.concurrencystock.adapter.persistence.nosql.entity.QuoteDocument;
+import com.iexapis.cloud.integration.concurrencystock.application.port.persistence.nosql.ServicePersistenceApi;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;

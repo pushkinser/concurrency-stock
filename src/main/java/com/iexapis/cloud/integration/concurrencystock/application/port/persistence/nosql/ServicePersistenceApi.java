@@ -1,4 +1,4 @@
-package com.iexapis.cloud.integration.concurrencystock.service.persistence.nosql;
+package com.iexapis.cloud.integration.concurrencystock.application.port.persistence.nosql;
 
 /**
  * QuotePersistence
