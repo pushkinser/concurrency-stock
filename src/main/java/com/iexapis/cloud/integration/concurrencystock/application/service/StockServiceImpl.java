@@ -1,10 +1,9 @@
 package com.iexapis.cloud.integration.concurrencystock.application.service;
 
 import com.iexapis.cloud.integration.concurrencystock.adapter.rest.model.Quote;
-import com.iexapis.cloud.integration.concurrencystock.application.port.input.QuoteClientRpsFrequencyApi;
-import com.iexapis.cloud.integration.concurrencystock.application.port.input.StockClientApi;
+import com.iexapis.cloud.integration.concurrencystock.application.port.rest.QuoteClientRpsFrequencyApi;
+import com.iexapis.cloud.integration.concurrencystock.application.port.rest.StockClientApi;
 import com.iexapis.cloud.integration.concurrencystock.adapter.persistence.inner.QuoteStorage;
-import com.iexapis.cloud.integration.concurrencystock.application.service.StockService;
 import com.iexapis.cloud.integration.concurrencystock.adapter.persistence.inner.StockStorage;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;

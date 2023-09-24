@@ -1,7 +1,7 @@
 package com.iexapis.cloud.integration.concurrencystock.adapter.rest.client;
 
 import com.iexapis.cloud.integration.concurrencystock.adapter.rest.model.Quote;
-import com.iexapis.cloud.integration.concurrencystock.application.port.input.QuoteClientApi;
+import com.iexapis.cloud.integration.concurrencystock.application.port.rest.QuoteClientApi;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
