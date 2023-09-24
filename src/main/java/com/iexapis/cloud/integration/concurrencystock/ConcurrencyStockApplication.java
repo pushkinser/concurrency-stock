@@ -8,11 +8,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableScheduling
 @SpringBootApplication
-@EnableAutoConfiguration(
-        exclude = {
-                DataSourceAutoConfiguration.class,
-        }
-)
 public class ConcurrencyStockApplication {
 
     public static void main(String[] args) {

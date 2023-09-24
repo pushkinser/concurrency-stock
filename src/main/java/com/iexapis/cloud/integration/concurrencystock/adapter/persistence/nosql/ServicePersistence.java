@@ -4,6 +4,7 @@ import com.iexapis.cloud.integration.concurrencystock.adapter.persistence.nosql.
 import com.iexapis.cloud.integration.concurrencystock.adapter.rest.model.Quote;
 import com.iexapis.cloud.integration.concurrencystock.application.port.persistence.nosql.QuoteNoSqlApi;
 import com.iexapis.cloud.integration.concurrencystock.application.port.persistence.nosql.ServicePersistenceApi;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -17,13 +18,10 @@ import java.util.UUID;
  * 24.09.2023
  */
 @Service
+@RequiredArgsConstructor
 public class ServicePersistence implements ServicePersistenceApi<Quote> {
 
     private final QuoteNoSqlApi quoteNoSqlApi;
-
-    public ServicePersistence(QuoteNoSqlApi quoteNoSqlApi) {
-        this.quoteNoSqlApi = quoteNoSqlApi;
-    }
 
     @Override
     public void createOrUpdate(Quote quote) {
