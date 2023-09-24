@@ -7,19 +7,30 @@ services:
     env_file: .env
     depends_on:
       - 'postgres'
+      - 'mongo'
       - 'init-kafka'
       - 'kafka-ui'
   postgres:
     container_name: concurrency-stock-postgres
     image: postgres:14
     ports:
-      - "${DB_PORT}:${DB_PORT}"
-#    volumes:
-#      - concurrency-stock:/var/lib/postgresql/data/
+      - "${POSTGRES_DB_PORT}:${POSTGRES_DB_PORT}"
+    volumes:
+      - concurrency-stock-postgres:/var/lib/postgresql/data/
     environment:
-      POSTGRES_DB: ${DB_NAME}
-      POSTGRES_USER: ${DB_USER_USERNAME}
-      POSTGRES_PASSWORD: ${DB_USER_PASSWORD}
+      POSTGRES_DB_NAME: ${POSTGRES_DB_NAME}
+      POSTGRES_DB_USER_NAME: ${POSTGRES_DB_USER_NAME}
+      POSTGRES_DB_USER_PASSWORD: ${POSTGRES_DB_USER_PASSWORD}
+  mongo:
+    container_name: concurrency-stock-mongo
+    image: mongo:6-jammy
+    ports:
+      - "${MONGO_DB_PORT}:${MONGO_DB_PORT}"
+    volumes:
+      - concurrency-stock-mongo:/var/lib/mongo/data/
+    environment:
+      MONGO_DB_USER_NAME: ${MONGO_DB_USER_NAME}
+      MONGO_DB_USER_PASSWORD: ${MONGO_DB_USER_PASSWORD}
   zookeeper:
     image: confluentinc/cp-zookeeper
     environment:
@@ -72,4 +83,6 @@ services:
 
 volumes:
   concurrency-stock-postgres:
+    driver: local
+  concurrency-stock-mongo:
     driver: local
