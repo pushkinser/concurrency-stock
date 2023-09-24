@@ -14,7 +14,7 @@ services:
     container_name: concurrency-stock-postgres
     image: postgres:14
     ports:
-      - "${POSTGRES_DB_PORT}:${POSTGRES_DB_PORT}"
+      - "${POSTGRES_DB_PORT}:${POSTGRES_DB_INNER_PORT}"
     volumes:
       - concurrency-stock-postgres:/var/lib/postgresql/data/
     environment:
