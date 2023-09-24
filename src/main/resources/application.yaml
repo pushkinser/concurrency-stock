@@ -27,3 +27,4 @@ app:
           stockNameKey: '{stockName}'
           stock: https://cloud.iexapis.com/stable/ref-data/symbols
         token: ${IEXCLOUD_API_TOKEN}
+        maxRps: 5
