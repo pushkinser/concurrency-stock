@@ -3,7 +3,9 @@ package com.iexapis.cloud.integration.concurrencystock.adapter.rest.client;
 import com.iexapis.cloud.integration.concurrencystock.adapter.rest.model.Quote;
 import com.iexapis.cloud.integration.concurrencystock.application.port.input.QuoteClientApi;
 import com.iexapis.cloud.integration.concurrencystock.application.port.input.QuoteClientRpsFrequencyApi;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.time.Duration;
@@ -13,9 +15,17 @@ import java.util.concurrent.Semaphore;
 @RequiredArgsConstructor
 public class QuoteClientRpsFrequencyProvider implements QuoteClientRpsFrequencyApi {
 
-    private static final int MAX_REQUESTS_PER_SECOND = 5;
     private final QuoteClientApi quoteClientApi;
-    private final Semaphore semaphore = new Semaphore(MAX_REQUESTS_PER_SECOND);
+
+    @Value("${app.integration.api.iexcloud.maxRps}")
+    private int rps;
+
+    private Semaphore semaphore;
+
+    @PostConstruct
+    void init() {
+        semaphore = new Semaphore(rps);
+    }
 
     @Override
     public Quote getQuotes(String stockName) {
